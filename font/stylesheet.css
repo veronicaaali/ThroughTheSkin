@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Juniper Std';
+    src: url('JuniperStd.woff2') format('woff2'),
+        url('JuniperStd.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

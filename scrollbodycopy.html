@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Horizontal Cube Scroll Effect</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scene {
+            width: 600px;
+            height: 600px;
+            perspective: 1000px;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            transition: transform 0.5s ease-out;
+        }
+
+        .face {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background-color: rgba(52, 152, 219, 0.9);
+            border: 2px solid #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .front  { transform: translateZ(300px); }
+        .back   { transform: rotateX(180deg) translateZ(300px); }
+        .right  { transform: rotateX(90deg) translateZ(300px); }
+        .left   { transform: rotateX(-90deg) translateZ(300px); }
+        .top    { transform: rotateX(90deg) translateZ(300px); }
+        .bottom { transform: rotateX(-90deg) translateZ(300px); }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="face front">Front</div>
+            <div class="face back">Back</div>
+            <div class="face right">Right</div>
+            <div class="face left">Left</div>
+            <div class="face top">Top</div>
+            <div class="face bottom">Bottom</div>
+        </div>
+    </div>
+
+    <script>
+        const cube = document.querySelector('.cube');
+        let rotationY = 0;
+
+        // Track mouse drag for horizontal scrolling
+        let isDragging = false;
+        let startX = 0;
+        let startRotationY = 0;
+
+        window.addEventListener('mousedown', (event) => {
+            isDragging = true;
+            startX = event.clientX;
+            startRotationY = rotationY;
+        });
+
+        window.addEventListener('mousemove', (event) => {
+            if (isDragging) {
+                const deltaX = event.clientX - startX;
+                rotationY = startRotationY + deltaX * 0.5; // Adjust rotation speed
+                cube.style.transform = `rotateY(${rotationY}deg)`;
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        // Horizontal scroll with mouse wheel
+        window.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            rotationY += event.deltaY * 0.1; // Adjust scroll speed
+            cube.style.transform = `rotateX(${rotationY}deg)`;
+        });
+    </script>
+</body>
+</html>

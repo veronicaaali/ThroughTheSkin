@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Scrapbooker';
+    src: local('Scrapbooker Sans'), local('Scrapbooker-Sans'),
+        url('ScrapbookerSans-Reguar.woff2') format('woff2'),
+        url('ScrapbookerSans-Reguar.woff') format('woff'),
+        url('ScrapbookerSans-Reguar.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

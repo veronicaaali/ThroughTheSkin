@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THROUGH THE SKIN</title>
+    <link rel="stylesheet" href="./font/stylesheet.css" />
+    <link rel="stylesheet" href="./font/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      .main-wrap {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        background: #efefef;
+      }
+      /* 标题 */
+      .main-title {
+        margin: 36px 36px 0;
+        padding: 16px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 78px;
+        text-align: center;
+        line-height: 66px;
+        color: #fff;
+        font-weight: bold;
+        border: 3px solid #fff;
+      }
+      /* add */
+      .button-enter {
+        font-family: 'Juniper Std';
+        height: 92px;
+        line-height: 92px;
+        font-size: 40px;
+        text-align: center;
+        border: 3px solid #000;
+        border-radius: 8px;
+        padding: 0 38px;
+        background: #000;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      .button-enter span {
+        position: relative;
+        color: #000;
+        z-index: 99;
+      }
+      .button-enter .msk {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        top: 0;
+        left: 0%;
+        z-index: 88;
+        transition: left ease 0.3s;
+      }
+      .button-enter:hover span {
+        color: #fff;
+      }
+      .button-enter:hover .msk {
+        left: 100%;
+      }
+      /* add */
+      .main-content {
+        margin: 0 36px 36px;
+        display: flex;
+        height: calc(100vh - 270px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .big-tile p {
+        font-size: 145px;
+        font-family: 'Juniper Std';
+        color: #c30d23;
+        margin: 0;
+        text-align: center;
+      }
+      .big-tile p img {
+        width: 234px;
+        margin-bottom: -50px;
+        vertical-align: middle;
+        transform: scale(1.4);
+        margin-top: -50px;
+      }
+      .main-content .text {
+        padding: 16px;
+        width: 30%;
+        color: #fff;
+        font-size: 16px;
+        line-height: 32px;
+        text-transform: uppercase;
+        background-color: #000;
+        overflow-y: auto;
+      }
+      .main-content .text:last-child {
+        word-break: keep-all;
+      }
+      .main-content .center {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border-left: 3px solid #fff;
+        border-right: 3px solid #fff;
+      }
+      .main-content .center .line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 28%;
+        font-size: 38px;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 16px;
+        overflow: hidden;
+      }
+      .main-content .center .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: auto;
+        background-color: #fff;
+      }
+      .main-content .center .logo img {
+        max-width: 100%;
+        height: 80%;
+        cursor: pointer;
+      }
+      .main-footer {
+        height: 270px;
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+      }
+      .marquee-container {
+        flex: 1;
+        width: 100%; /* 容器宽度 */
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-family: '黑体';
+      }
+      .marquee-container:first-child {
+        color: #c30d23;
+        background-color: #fff;
+      }
+      .marquee-container:nth-child(2) {
+        color: #000;
+        background-color: #c30d23;
+      }
+      .marquee-container:nth-child(3) {
+        color: #fff;
+        background-color: #000;
+      }
+
+      .marquee {
+        display: inline-block;
+        position: absolute;
+        white-space: nowrap;
+        left: 100%; /* 初始位置，文字在容器右侧 */
+      }
+
+      /* 特殊样式：往右滚动的容器 */
+      .marquee-container.right {
+        direction: rtl; /* 从右向左布局 */
+      }
+
+      @media (min-width: 768px) and (max-width: 900px) {
+        .main-title {
+          font-size: 60px;
+        }
+      }
+      @media (min-width: 580px) and (max-width: 768px) {
+        .main-title {
+          font-size: 48px;
+        }
+        .main-content .text {
+          font-size: 15px;
+        }
+        .marquee-container {
+          font-size: 18px;
+        }
+      }
+      @media (max-width: 580px) {
+        .main-title {
+          font-size: 40px;
+        }
+      }
+    </style>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100vh;
+      }
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+      }
+      .swiper-slide:nth-child(2n) {
+        background-color: #252525;
+      }
+      .swiper-slide:nth-child(3n) {
+        background-color: #e74c3c;
+      }
+
+      /* 第二屏的样式 */
+      .swiper-slide:nth-child(2) {
+        display: block; /* 取消 flex 布局 */
+        overflow-y: auto; /* 允许内容超出时出现滚动条 */
+      }
+      .inner-content {
+        min-height: 150vh; /* 超出屏幕高度 */
+        padding: 100px;
+        box-sizing: border-box;
+      }
+      .inner-content .top {
+        margin-bottom: 150px;
+      }
+      .inner-content .top .title p {
+        font-size: 80px;
+        color: #efefef;
+        margin: 0;
+        font-family: 'Juniper Std';
+      }
+      .inner-content .bottom {
+        padding-left: 160px;
+        color: #fff;
+      }
+      .inner-content .bottom p {
+        margin: 0;
+        line-height: 72px;
+        font-size: 40px;
+        font-family: 'Scrapbooker';
+      }
+      .inner-content .bottom p span {
+        color: #5c5c5c;
+        margin-left: 36px;
+        font-size: 37px;
+        font-family: '黑体';
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="main-wrap">
+            <div class="main-content">
+              <div class="big-tile">
+                <p>THROUGH</p>
+                <p>THE <img src="./images/lg2.png" /> SKIN</p>
+              </div>
+              <div class="button-enter" id="start">
+                <span>ENTER</span>
+                <div class="msk"></div>
+              </div>
+            </div>
+            <div class="main-footer">
+              <!-- 轮播容器 -->
+              <div class="marquee-container">
+                <div class="marquee">
+                  纹身作为一种自我表达的方式，可以展示一个人的个性和兴趣。有的人可能会选择喜欢的艺术作品、偶像或标志性的符号作为纹身图案，以此来展示他们独特的个性和价值观。纹身作为一种自我表达的方式，可以展示一个人的个性和兴趣。有的人可能会选择喜欢的艺术作品、偶像或标志性的符号作为纹身图案，以此来展示他们独特的个性和价值观。
+                </div>
+              </div>
+
+              <div class="marquee-container right">
+                <div class="marquee">
+                  许多人选择纹身来纪念生命中的重要时刻，例如婚礼、孩子的出生或亲人的离世。这些纹身不仅是一种视觉上的纪念，更是一种情感上的永久烙印，时刻提醒着持有人那些珍贵的回忆。许多人选择纹身来纪念生命中的重要时刻，例如婚礼、孩子的出生或亲人的离世。这些纹身不仅是一种视觉上的纪念，更是一种情感上的永久烙印，时刻提醒着持有人那些珍贵的回忆。
+                </div>
+              </div>
+
+              <div class="marquee-container">
+                <div class="marquee">
+                  部分人将纹身视为记录个人成长和变化的方式。随着人生经历的丰富和成熟，纹身可以成为一个人心路历程的视觉日志，记录着每一个重要阶段和转折点。部分人将纹身视为记录个人成长和变化的方式。随着人生经历的丰富和成熟，纹身可以成为一个人心路历程的视觉日志，记录着每一个重要阶段和转折点。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="inner-content">
+            <div class="top">
+              <div class="title" style="margin-bottom: 50px">
+                <p>THROUGH</p>
+                <p>THE <img src="./images/lg2.png" width="80px" /> SKIN</p>
+              </div>
+              <div class="title">
+                <p>ABOUT</p>
+              </div>
+            </div>
+            <div class="bottom">
+              <p>After the pain subsides<span>疼痛過後，</span></p>
+              <p>ink is embedded into the skin<span>墨水被植入皮膚，</span></p>
+              <p>
+                leaving behind an indelible pattern<span
+                  >疼痛过后留下了無法擦除的圖案，</span
+                >
+              </p>
+              <p>a tattoo takes shape<span>一個文身就這樣成型。</span></p>
+              <p>
+                This art, accompanied by pain<span>這份伴隨著疼痛的藝術</span>
+              </p>
+              <p>
+                has long been seen by many as a symbol of defiance<span
+                  >在很多人眼中是“離經叛道”的象徵。</span
+                >
+              </p>
+              <p>However, in this era<span>但在這個時代，</span></p>
+              <p>
+                tattoos are no longer just a meaningless trend or an attempt to
+                look cool.<span>紋身不再是沒有意義的跟風裝酷。</span>
+              </p>
+              <p>
+                For many tattooed individuals,<span>對很多紋身者來說，</span>
+              </p>
+              <p>each design is unique<span>每個圖案都獨一無二，</span></p>
+              <p>
+                marking an important moment in their lives<span
+                  >記錄著屬於自己的重要時刻，</span
+                >
+              </p>
+              <p>
+                and becoming a permanent companion on their journey.<span
+                  >也將一直陪伴自己走下去。</span
+                >
+              </p>
+              <p>To the older generation<span>在父母那一輩看來，</span></p>
+              <p>
+                tattoos are a hallmark of troublemakers<span
+                  >紋身是壞孩子的標配，</span
+                >
+              </p>
+              <p>
+                But to those who bear them,<span>在那些有紋身的人看來，</span>
+              </p>
+              <p>tattoos are simply memories<span>那只是一段記憶，</span></p>
+              <p>—stories etched into the skin.<span>一段故事而已。</span></p>
+            </div>
+            <div
+              style="display: flex; justify-content: flex-end; margin-top: 40px"
+            >
+              <a href="./pages/menus.html"><img src="./images/logo.png" width="200px" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // 绑定按钮点击事件
+      const goToButton = document.querySelector('#start')
+      // const slider1 = document.querySelector('.main-wrap')
+      goToButton.addEventListener('click', () => {
+        // slider1.style.backgroundColor = '#252525'
+        mySwiper.slideTo(1) // 切换到第二屏（索引从 0 开始）
+      })
+      // JavaScript 实现
+      document.addEventListener('DOMContentLoaded', () => {
+        // 获取所有 marquee 容器
+        var marqueeContainers = document.querySelectorAll('.marquee-container')
+        // 当前速度
+        var speed = 0.5
+
+        // 遍历每个容器
+        marqueeContainers.forEach((container) => {
+          var marquee = container.querySelector('.marquee')
+          var containerWidth = container.offsetWidth // 容器宽度
+          var textWidth = marquee.scrollWidth // 文字总宽度
+          // 克隆一份 marquee 内容，用于无缝连接（如果文字宽度小于容器宽度）
+          var marqueeClone = marquee.cloneNode(true)
+          if (containerWidth < textWidth) {
+            container.appendChild(marqueeClone)
+          }
+
+          // 设置 marquee 的初始位置
+          if (container.classList.contains('right')) {
+            // 往右滚动：初始位置在左侧
+            // marquee.style.left = `-${textWidth}px`;
+            // marqueeClone.style.left = `-${textWidth * 2}px`;
+            marquee.style.left = 0
+            marqueeClone.style.left = `-${textWidth}px`
+          } else {
+            // 往左滚动：初始位置在右侧
+            // marquee.style.left = `${containerWidth}px`;
+            // marqueeClone.style.left = `${containerWidth + textWidth}px`;
+            marquee.style.left = 0
+            marqueeClone.style.left = `${textWidth}px`
+          }
+
+          var animationFrameId // 用于存储 requestAnimationFrame 的 ID
+          var isPaused = false // 是否暂停
+
+          // 定义滚动动画
+          function scrollMarquee() {
+            if (isPaused) return // 如果暂停，则停止滚动
+            // 如果文本宽度小于容器宽度，不需要滚动
+            if (containerWidth >= textWidth) return
+
+            // 获取当前 marquee 和 marqueeClone 的 left 值
+            var currentLeft = parseFloat(marquee.style.left)
+            var currentCloneLeft = parseFloat(marqueeClone.style.left)
+
+            if (container.classList.contains('right')) {
+              // 往右滚动逻辑
+              if (currentLeft > containerWidth) {
+                currentLeft = currentCloneLeft - textWidth
+              }
+              if (currentCloneLeft > containerWidth) {
+                currentCloneLeft = currentLeft - textWidth
+              }
+              marquee.style.left = `${currentLeft + speed}px`
+              marqueeClone.style.left = `${currentCloneLeft + speed}px`
+            } else {
+              // 往左滚动逻辑
+              if (currentLeft < -textWidth) {
+                currentLeft = currentCloneLeft + textWidth
+              }
+              if (currentCloneLeft < -textWidth) {
+                currentCloneLeft = currentLeft + textWidth
+              }
+              marquee.style.left = `${currentLeft - speed}px`
+              marqueeClone.style.left = `${currentCloneLeft - speed}px`
+            }
+
+            // 递归调用，实现连续滚动
+            animationFrameId = requestAnimationFrame(scrollMarquee)
+          }
+
+          // 启动滚动动画
+          scrollMarquee()
+
+          // 鼠标悬停时暂停
+          container.addEventListener('mouseenter', () => {
+            isPaused = true
+          })
+
+          // 鼠标离开时恢复
+          container.addEventListener('mouseleave', () => {
+            isPaused = false
+            scrollMarquee()
+          })
+        })
+      })
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        mousewheel: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        on: {
+          // 监听 Swiper 的切换事件
+          slideChange: function () {
+            // 如果切换到第二屏，禁用 Swiper 的鼠标滚轮
+            if (this.activeIndex === 1) {
+              this.mousewheel.disable()
+              // 监听第二屏的滚动事件
+              const secondSlide = this.slides[1]
+              secondSlide.addEventListener('scroll', handleSecondSlideScroll)
+            } else {
+              this.mousewheel.enable()
+              // 移除第二屏的滚动事件监听
+              const secondSlide = this.slides[1]
+              secondSlide.removeEventListener('scroll', handleSecondSlideScroll)
+            }
+          }
+        }
+      })
+
+      // 处理第二屏的滚动事件
+      let isAtTop = false // 是否滚动到顶部
+      let lastScrollTop = 0 // 上一次的滚动位置
+      function handleSecondSlideScroll(event) {
+        const secondSlide = event.target
+        const scrollTop = secondSlide.scrollTop
+
+        // 判断是否滚动到顶部
+        if (scrollTop === 0) {
+          isAtTop = true // 标记已经滚动到顶部
+        }
+
+        // 判断用户是否再次向上滚动
+        if (isAtTop && scrollTop < lastScrollTop) {
+          mySwiper.slidePrev() // 切换到上一屏
+          isAtTop = false // 重置状态
+        }
+
+        // 更新上一次的滚动位置
+        lastScrollTop = scrollTop
+      }
+    </script>
+  </body>
+</html>

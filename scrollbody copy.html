@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./font/stylesheet.css" />
+    <link rel="stylesheet" href="./font/style2.css" />
+    <title>Menu</title>
+    <style>
+      /* CSS 样式 */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+      .header {
+        display: flex;
+        height: 100px;
+        padding: 60px;
+        justify-content: space-between;
+      }
+      .header .logo img {
+        width: 110px;
+        transform: scale(1.5);
+        margin-top: -30px;
+      }
+      .header .menu {
+        display: flex;
+      }
+      .header .menu p {
+        background: #c30d23;
+        color: #fff;
+        line-height: 75px;
+        height: 70px;
+        font-size: 32px;
+        font-family: 'Juniper Std';
+        margin: 0;
+        margin-left: 30px;
+        padding: 0 28px;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      .header .menu p a{
+        text-decoration: none;
+        color: #fff;
+      }
+      .cube-container {
+        width: 100vw;
+        height: calc(100vh - 220px);
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        position: fixed;
+        overflow: hidden;
+      }
+
+      .cube {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-450px) rotateX(0deg); /* 初始旋转角度 */
+        transition: transform 0.5s ease-out;
+      }
+      .face {
+        position: absolute;
+        width: calc(100vw - 10%);
+        height: -webkit-fill-available;
+        padding: 1.2% 5%;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+      }
+      .face .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .post {
+        width: 320px;
+      }
+      .post img {
+        width: 100%;
+        vertical-align: middle;
+      }
+      .face span {
+        color: #c30d23;
+        margin-top: 16px;
+        font-size: 30px;
+        font-family: 'Scrapbooker';
+      }
+      .face p {
+        font-size: 20px;
+        line-height: 40px;
+        margin: 0;
+        font-family: 'Scrapbooker';
+      }
+      .more {
+        font-family: 'Scrapbooker';
+        text-decoration: underline;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .more.margin{
+        margin-bottom: 20px;
+      }
+      .more a{
+        font-style: normal;
+        color: #000;
+      }
+      .face1 {
+        transform: rotateX(0) translateZ(450px);
+      }
+      .face2 {
+        transform: rotateX(300deg) translateZ(450px);
+      }
+      .face3 {
+        transform: rotateX(240deg) translateZ(450px);
+      }
+      .face4 {
+        transform: rotateX(180deg) translateZ(450px);
+      }
+      .face5 {
+        transform: rotateX(120deg) translateZ(450px);
+      }
+      .face6 {
+        transform: rotateX(60deg) translateZ(450px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo"><img src="./images/lg2.png" /></div>
+      <div class="menu">
+        <p><a href="./index.html">HOME</a></p>
+        <p>ABOUT</p>
+        <p>STORIES</p>
+        <p>MORE</p>
+      </div>
+    </div>
+    <div class="cube-container">
+      <div class="cube">
+        <div class="face face1">
+          <div class="content">
+            <div class="post"><img src="./images/menu-1.png" /></div>
+            <span>MY FIVE TATTOOS</span>
+          </div>
+        </div>
+        <div class="face face2">
+          <div class="content">
+            <p>我身上紋身的故事。我總共有五個紋身。</p>
+            <p>
+              The stories behind my tattoos. I have a total of five tattoos.
+            </p>
+            <p>第一個和第二個是大二時在巴釐島紋的。</p>
+            <p>The first and second ones were done during my ……</p>
+            <div class="more margin"><a href="./pages/content1.html">READ MORE</a></div>
+            <div class="post"><img src="./images/menu-3.png" /></div>
+          </div>
+        </div>
+        <div class="face face3">
+          <div class="content">
+            <span>BROTHER</span>
+            <p>弟弟出生一年後我去紋身了，這個小傢伙可能是我的天使。</p>
+            <p>
+              A year after my younger brother was born. This little guy might
+              just……
+            </p>
+            <div class="more margin"><a href="./pages/content2.html">READ MORE</a></div>
+            
+          </div>
+        </div>
+        <div class="face face4">
+          <div class="content">
+            <div class="post"><img src="./images/menu-5.png" /></div>
+            <span>MY Family</span>
+            <p>
+              這個紋身是我高中的時候紋的，它是我媽媽，我和我妹妹的生日，從小到大我們……
+            </p>
+            <div class="more margin"><a href="./pages/content5.html">READ MORE</a></div>
+            
+          </div>
+        </div>
+        <div class="face face5">
+          <div class="content">
+            <div class="post"><img src="./images/menu-4.png" /></div>
+            <span>Hell & Heaven</span>
+            <p>
+              2016年底決定紋身，緣於2016年5月從1.5線城市CBD辭職去了雲南邊境，開了一家民宿……
+            </p>
+            <div class="more margin"><a href="./pages/content4.html">READ MORE</a></div>
+          </div>
+        </div>
+        <div class="face face6">
+          <div class="content">
+            <div class="post"><img src="./images/menu-2.png" /></div>
+            <span>...</span>
+            <div class="more"><a href="./pages/content3.html">READ MORE</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const cube = document.querySelector('.cube')
+      let rotationY = 0
+
+      // Track mouse drag for horizontal scrolling
+      /* let isDragging = false;
+      let startX = 0;
+      let startRotationY = 0;
+
+      window.addEventListener('mousedown', event => {
+        isDragging = true;
+        startX = event.clientX;
+        startRotationY = rotationY;
+      });
+
+      window.addEventListener('mousemove', event => {
+        if (isDragging) {
+          const deltaX = event.clientX - startX;
+          rotationY = startRotationY + deltaX * 0.5; // Adjust rotation speed
+          cube.style.transform = `translateZ(-450px) rotateY(${rotationY}deg)`;
+        }
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      window.addEventListener('mouseleave', () => {
+        isDragging = false;
+      });*/
+
+      // Horizontal scroll with mouse wheel
+      window.addEventListener('wheel', (event) => {
+        event.preventDefault()
+        rotationY += event.deltaY * 0.1 // Adjust scroll speed
+        cube.style.transform = `translateZ(-450px) rotateX(${rotationY}deg)`
+      })
+    </script>
+  </body>
+</html>
