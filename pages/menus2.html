@@ -28,7 +28,6 @@
       }
       .header .menu {
         display: flex;
-        margin-right: 80px;
       }
       .header .menu p {
         background: #c30d23;
@@ -74,8 +73,8 @@
       }
       .face .content {
         display: flex;
+        flex-direction: column;
         align-items: flex-end;
-        justify-content: space-around;
       }
       .post {
         width: 320px;
@@ -104,7 +103,6 @@
       }
       .more.margin {
         margin-bottom: 20px;
-        text-align: right;
       }
       .more a {
         font-style: normal;
@@ -114,16 +112,19 @@
         transform: rotateX(0) translateZ(500px);
       }
       .face2 {
-        transform: rotateX(288deg) translateZ(500px);
+        transform: rotateX(300deg) translateZ(500px);
       }
       .face3 {
-        transform: rotateX(216deg) translateZ(500px);
+        transform: rotateX(240deg) translateZ(500px);
       }
       .face4 {
-        transform: rotateX(144deg) translateZ(500px);
+        transform: rotateX(180deg) translateZ(500px);
       }
       .face5 {
-        transform: rotateX(72deg) translateZ(500px);
+        transform: rotateX(120deg) translateZ(500px);
+      }
+      .face6 {
+        transform: rotateX(60deg) translateZ(500px);
       }
     </style>
   </head>
@@ -133,7 +134,7 @@
       <div class="menu">
         <p><a href="../index.html">HOME</a></p>
         <p>ABOUT</p>
-        <p><a href="./end.html">STORIES</a></p>
+        <p>STORIES</p>
         <p>MORE</p>
       </div>
     </div>
@@ -141,85 +142,66 @@
       <div class="cube">
         <div class="face face1">
           <div class="content">
-            <div>
-              <div class="post"><img src="../images/menu-1.png" /></div>
-              <span>MY FIVE TATTOOS</span>
-            </div>
-            <div>
-              <p>我身上紋身的故事。我總共有五個紋身。</p>
-              <p>
-                The stories behind my tattoos. I have a total of five tattoos.
-              </p>
-              <p>第一個和第二個是大二時在巴釐島紋的。</p>
-              <p>The first and second ones were done during my ……</p>
-              <div class="more margin">
-                <a href="./content1.html">READ MORE</a>
-              </div>
-            </div>
+            <div class="post"><img src="../images/menu-1.png" /></div>
+            <span>MY FIVE TATTOOS</span>
           </div>
         </div>
         <div class="face face2">
           <div class="content">
-            <div>
-              <div class="post"><img src="../images/menu-3.png" /></div>
-              <span>BROTHER</span>
+            <p>我身上紋身的故事。我總共有五個紋身。</p>
+            <p>
+              The stories behind my tattoos. I have a total of five tattoos.
+            </p>
+            <p>第一個和第二個是大二時在巴釐島紋的。</p>
+            <p>The first and second ones were done during my ……</p>
+            <div class="more margin">
+              <a href="./content1.html">READ MORE</a>
             </div>
-            <div>
-              <p>弟弟出生一年後我去紋身了，這個小傢伙可能是我的天使。</p>
-              <p>
-                A year after my younger brother was born. This little guy might
-                just……
-              </p>
-              <div class="more margin">
-                <a href="./content2.html">READ MORE</a>
-              </div>
-            </div>
+            <div class="post"><img src="../images/menu-3.png" /></div>
           </div>
         </div>
         <div class="face face3">
           <div class="content">
-            <div>
-              <div class="post"><img src="../images/menu-5.png" /></div>
-              <span>MY Family</span>
-            </div>
-            <div>
-              <p>
-                這個紋身是我高中的時候紋的，它是我媽媽，我和我妹妹的生日，從小到大我們……
-              </p>
-              <div class="more margin">
-                <a href="./content5.html">READ MORE</a>
-              </div>
+            <span>BROTHER</span>
+            <p>弟弟出生一年後我去紋身了，這個小傢伙可能是我的天使。</p>
+            <p>
+              A year after my younger brother was born. This little guy might
+              just……
+            </p>
+            <div class="more margin">
+              <a href="./content2.html">READ MORE</a>
             </div>
           </div>
         </div>
         <div class="face face4">
           <div class="content">
-            <div>
-              <div class="post"><img src="../images/menu-4.png" /></div>
-              <span>Hell & Heaven</span>
-            </div>
-            <div>
-              <p>
-                2016年底決定紋身，緣於2016年5月從1.5線城市CBD辭職去了雲南邊境，開了一家民宿……
-              </p>
-              <div class="more margin">
-                <a href="./content4.html">READ MORE</a>
-              </div>
+            <div class="post"><img src="../images/menu-5.png" /></div>
+            <span>MY Family</span>
+            <p>
+              這個紋身是我高中的時候紋的，它是我媽媽，我和我妹妹的生日，從小到大我們……
+            </p>
+            <div class="more margin">
+              <a href="./content5.html">READ MORE</a>
             </div>
           </div>
         </div>
         <div class="face face5">
           <div class="content">
-            <div>
-              <div class="post"><img src="../images/menu-2.png" /></div>
-              <span>...</span>
+            <div class="post"><img src="../images/menu-4.png" /></div>
+            <span>Hell & Heaven</span>
+            <p>
+              2016年底決定紋身，緣於2016年5月從1.5線城市CBD辭職去了雲南邊境，開了一家民宿……
+            </p>
+            <div class="more margin">
+              <a href="./content4.html">READ MORE</a>
             </div>
-            <div>
-              <p>
-                ....
-              </p>
-              <div class="more"><a href="./content3.html">READ MORE</a></div>
-            </div>
+          </div>
+        </div>
+        <div class="face face6">
+          <div class="content">
+            <div class="post"><img src="../images/menu-2.png" /></div>
+            <span>...</span>
+            <div class="more"><a href="./content3.html">READ MORE</a></div>
           </div>
         </div>
       </div>

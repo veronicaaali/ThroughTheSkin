@@ -6,6 +6,7 @@
     <title>THROUGH THE SKIN</title>
     <link rel="stylesheet" href="./font/stylesheet.css" />
     <link rel="stylesheet" href="./font/style.css" />
+    <link rel="stylesheet" href="./font/style2.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -249,14 +250,14 @@
       }
       .inner-content .bottom p {
         margin: 0;
-        line-height: 72px;
-        font-size: 40px;
-        font-family: 'Scrapbooker';
+        line-height: 4rem;
+        font-size: 2rem;
+        font-family: 'Scrapbooker-I';
       }
       .inner-content .bottom p span {
         color: #5c5c5c;
         margin-left: 36px;
-        font-size: 37px;
+        font-size: 2rem;
         font-family: '黑体';
       }
     </style>
@@ -360,7 +361,9 @@
             <div
               style="display: flex; justify-content: flex-end; margin-top: 40px"
             >
-              <a href="./pages/menus.html"><img src="./images/logo.png" width="200px" /></a>
+              <a href="./pages/menus.html"
+                ><img src="./images/logo.png" width="200px"
+              /></a>
             </div>
           </div>
         </div>
@@ -373,6 +376,39 @@
       goToButton.addEventListener('click', () => {
         // slider1.style.backgroundColor = '#252525'
         mySwiper.slideTo(1) // 切换到第二屏（索引从 0 开始）
+      })
+      const marqueebox = document.querySelectorAll('.marquee-container')
+      const map = [
+        {
+          en: `Tattoos, as a form of self-expression, can showcase a person's personality and interests. Some people may choose their favorite artworks, idols, or iconic symbols as tattoo designs to display their unique character and values.Tattoos, as a form of self-expression, can showcase a person's personality and interests. Some people may choose their favorite artworks, idols, or iconic symbols as tattoo designs to display `,
+          zh: `纹身作为一种自我表达的方式，可以展示一个人的个性和兴趣。有的人可能会选择喜欢的艺术作品、偶像或标志性的符号作为纹身图案，以此来展示他们独特的个性和价值观。纹身作为一种自我表达的方式，可以展示一个人的个性和兴趣。有的人可能会选择喜欢的艺术作品、偶像或标志性的符号作为纹身图案，以此来展示他们独特的个性和价值观。`
+        },
+        {
+          en: `Many people choose to get tattoos to commemorate important moments in their lives, such as weddings, the birth of a child, or the passing of a loved one. These tattoos are not only visual reminders but also emotional, permanent marks that constantly remind the wearer of those precious memories.Many people choose to get tattoos to commemorate important moments in.Many people choose to get tattoos to commemorate important moments in their`,
+          zh: `许多人选择纹身来纪念生命中的重要时刻，例如婚礼、孩子的出生或亲人的离世。这些纹身不仅是一种视觉上的纪念，更是一种情感上的永久烙印，时刻提醒着持有人那些珍贵的回忆。许多人选择纹身来纪念生命中的重要时刻，例如婚礼、孩子的出生或亲人的离世。这些纹身不仅是一种视觉上的纪念，更是一种情感上的永久烙印，时刻提醒着持有人那些珍贵的回忆。`
+        },
+        {
+          en: `Some people see tattoos as a way to document personal growth and change. As life experiences accumulate and maturity develops, tattoos can serve as a visual journal of one’s inner journey, marking each significant stage and turning point along the way.`,
+          zh: `部分人将纹身视为记录个人成长和变化的方式。随着人生经历的丰富和成熟，纹身可以成为一个人心路历程的视觉日志，记录着每一个重要阶段和转折点。部分人将纹身视为记录个人成长和变化的方式。随着人生经历的丰富和成熟，纹身可以成为一个人心路历程的视觉日志，记录着每一个重要阶段和转折点。`
+        }
+      ]
+      marqueebox.forEach((item, i) => {
+        // 监听 mouseenter 事件
+        item.addEventListener('mouseenter', function () {
+          const list = item.querySelectorAll('.marquee')
+          item.style.fontFamily = `'Scrapbooker'`
+          list.forEach((e) => {
+            e.innerText = map[i].en
+          })
+        })
+
+        // 监听 mouseleave 事件
+        item.addEventListener('mouseleave', function () {
+          const list = item.querySelectorAll('.marquee')
+          list.forEach((e) => {
+            e.innerText = map[i].zh
+          })
+        })
       })
       // JavaScript 实现
       document.addEventListener('DOMContentLoaded', () => {
@@ -451,13 +487,13 @@
 
           // 鼠标悬停时暂停
           container.addEventListener('mouseenter', () => {
-            isPaused = true
+            // isPaused = true
           })
 
           // 鼠标离开时恢复
           container.addEventListener('mouseleave', () => {
-            isPaused = false
-            scrollMarquee()
+            // isPaused = false
+            // scrollMarquee()
           })
         })
       })

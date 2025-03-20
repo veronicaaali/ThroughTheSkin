@@ -63,7 +63,7 @@
   margin: 60px 0;
 }
 .text-content{
-  font-family: 'Juniper Std';
+  font-family: 'Scrapbooker';
 }
 .text-content p{
   margin-bottom: 60px;
@@ -74,4 +74,7 @@
   margin-top: 120px;
   text-align: center;
   cursor: pointer;
+}
+a{
+  color: unset;
 }
