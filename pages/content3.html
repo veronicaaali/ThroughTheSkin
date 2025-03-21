@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THROUGH THE SKIN</title>
     <link rel="stylesheet" href="../font/stylesheet.css" />
-    <link rel="stylesheet" href="../font/style.css" />
+    <link rel="stylesheet" href="../font/style2.css" />
     <link rel="stylesheet" href="../style.css" />
   </head>
 
@@ -14,9 +14,13 @@
       <img src="../images/logo.png" />
     </div>
     <div class="main">
-      <div class="play"><img src="../images/play.png"></div>
+      <div class="play" onclick="document.getElementById('myAudio').play()"><img src="../images/play.png">
+        <audio controls id="myAudio">
+          <source src="../audio/MY Family.m4a" type="audio/mp4">
+        </audio>
+      </div> 
       <div class="main-img"><img src="../images/menu-3.png"></div>
-      <div class="text-content">
+      <div class="text-content" style="font-family: 'Scrapbooker';">
         <p>When I was very young, I had surgery on my right shoulder. Due to a medical accident, it left a large and ugly scar that stayed with me as I grew up.</p>
         <p>Back then, I was extremely self-conscious — I didn’t even dare to wear clothes with wide necklines.</p>
         <p>When I was in college, one day I decided to get a tattoo to cover it. I secretly saved up money without telling my mom and had a flower tattooed over the scar. From that moment on, I was never insecure about it again (though sometimes I still cover it with clothes or my hair, afraid of being judged by coworkers).</p>

@@ -78,3 +78,9 @@
 a{
   color: unset;
 }
+.play{
+  cursor: pointer;
+}
+.play audio{
+  opacity: 0;
+}

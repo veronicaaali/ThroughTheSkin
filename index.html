@@ -71,7 +71,7 @@
       }
       /* add */
       .main-content {
-        margin: 0 36px 36px;
+        margin: 36px;
         display: flex;
         height: calc(100vh - 270px);
         flex-direction: column;
@@ -79,7 +79,7 @@
         justify-content: space-around;
       }
       .big-tile p {
-        font-size: 145px;
+        font-size: 7rem;
         font-family: 'Juniper Std';
         color: #c30d23;
         margin: 0;
@@ -171,6 +171,7 @@
         position: absolute;
         white-space: nowrap;
         left: 100%; /* 初始位置，文字在容器右侧 */
+        font-family: 'Scrapbooker';
       }
 
       /* 特殊样式：往右滚动的容器 */
@@ -281,19 +282,19 @@
               <!-- 轮播容器 -->
               <div class="marquee-container">
                 <div class="marquee">
-                  纹身作为一种自我表达的方式，可以展示一个人的个性和兴趣。有的人可能会选择喜欢的艺术作品、偶像或标志性的符号作为纹身图案，以此来展示他们独特的个性和价值观。纹身作为一种自我表达的方式，可以展示一个人的个性和兴趣。有的人可能会选择喜欢的艺术作品、偶像或标志性的符号作为纹身图案，以此来展示他们独特的个性和价值观。
+                  Tattoos, as a form of self-expression, can showcase a person's personality and interests. Some people may choose their favorite artworks, idols, or iconic symbols as tattoo designs to display their unique character and values.Tattoos, as a form of self-expression, can showcase a person's personality and interests. Some people may choose their favorite artworks, idols, or iconic symbols as tattoo designs to display 
                 </div>
               </div>
 
               <div class="marquee-container right">
                 <div class="marquee">
-                  许多人选择纹身来纪念生命中的重要时刻，例如婚礼、孩子的出生或亲人的离世。这些纹身不仅是一种视觉上的纪念，更是一种情感上的永久烙印，时刻提醒着持有人那些珍贵的回忆。许多人选择纹身来纪念生命中的重要时刻，例如婚礼、孩子的出生或亲人的离世。这些纹身不仅是一种视觉上的纪念，更是一种情感上的永久烙印，时刻提醒着持有人那些珍贵的回忆。
+                  Many people choose to get tattoos to commemorate important moments in their lives, such as weddings, the birth of a child, or the passing of a loved one. These tattoos are not only visual reminders but also emotional, permanent marks that constantly remind the wearer of those precious memories.Many people choose to get tattoos to commemorate important moments in.Many people choose to get tattoos to commemorate important moments in their
                 </div>
               </div>
 
               <div class="marquee-container">
                 <div class="marquee">
-                  部分人将纹身视为记录个人成长和变化的方式。随着人生经历的丰富和成熟，纹身可以成为一个人心路历程的视觉日志，记录着每一个重要阶段和转折点。部分人将纹身视为记录个人成长和变化的方式。随着人生经历的丰富和成熟，纹身可以成为一个人心路历程的视觉日志，记录着每一个重要阶段和转折点。
+                  Some people see tattoos as a way to document personal growth and change. As life experiences accumulate and maturity develops, tattoos can serve as a visual journal of one’s inner journey, marking each significant stage and turning point along the way.
                 </div>
               </div>
             </div>
@@ -304,7 +305,9 @@
             <div class="top">
               <div class="title" style="margin-bottom: 50px">
                 <p>THROUGH</p>
-                <p>THE <img src="./images/lg2.png" width="80px" /> SKIN</p>
+                <p>THE <img src="./images/lg2.png" width="80px" style="    width: 170px;
+                  margin-top: -42px;
+                  vertical-align: middle;"/> SKIN</p>
               </div>
               <div class="title">
                 <p>ABOUT</p>
@@ -362,7 +365,7 @@
               style="display: flex; justify-content: flex-end; margin-top: 40px"
             >
               <a href="./pages/menus.html"
-                ><img src="./images/logo.png" width="200px"
+                ><img src="./images/logo2.png" width="200px" style="transform: scale(2.5);"
               /></a>
             </div>
           </div>
@@ -396,9 +399,8 @@
         // 监听 mouseenter 事件
         item.addEventListener('mouseenter', function () {
           const list = item.querySelectorAll('.marquee')
-          item.style.fontFamily = `'Scrapbooker'`
           list.forEach((e) => {
-            e.innerText = map[i].en
+            e.innerText = map[i].zh
           })
         })
 
@@ -406,7 +408,7 @@
         item.addEventListener('mouseleave', function () {
           const list = item.querySelectorAll('.marquee')
           list.forEach((e) => {
-            e.innerText = map[i].zh
+            e.innerText = map[i].en
           })
         })
       })

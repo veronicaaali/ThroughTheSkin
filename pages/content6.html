@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THROUGH THE SKIN</title>
     <link rel="stylesheet" href="../font/stylesheet.css" />
-    <link rel="stylesheet" href="../font/style.css" />
+    <link rel="stylesheet" href="../font/style2.css" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <style>
@@ -18,7 +18,14 @@
       <img src="../images/logo.png" />
     </div>
     <div class="main">
-      <div class="play"><img src="../images/play.png"></div>
+      <div class="play" onclick="document.getElementById('myAudio').play()"><img src="../images/play.png">
+        <audio controls id="myAudio">
+          <source src="../audio/Hell & Heaven.m4a" type="audio/mp4">
+          <!-- 备选格式（推荐添加以提高兼容性） -->
+          <source src="../audio/Hell & Heaven.m4a" type="audio/mpeg">
+          您的浏览器不支持音频播放，请<a href="your-audio.m4a">下载文件</a>。
+        </audio>
+      </div> 
       <div class="main-img"><img src="../images/3.png" width="676"></div>
       <div class="text-content">
         <p>I finally decided to get this Möbius strip tattoo after being diagnosed with bipolar disorder. I was caught in a terrifying cycle of depression and mania, along with insomnia, vomiting, rashes… and heartbreak.</p>
@@ -27,7 +34,14 @@
         <p>(Later, some people asked me, “Why did you get such a big number 8 tattooed?” I would just smile and say, “Because I feel like it!” :) )</p>
       </div>
 
-      <div class="play"><img src="../images/play.png"></div>
+      <div class="play" onclick="document.getElementById('myAudio2').play()"><img src="../images/play.png">
+        <audio controls id="myAudio2">
+          <source src="../audio/Hell & Heaven.m4a" type="audio/mp4">
+          <!-- 备选格式（推荐添加以提高兼容性） -->
+          <source src="../audio/Hell & Heaven.m4a" type="audio/mpeg">
+          您的浏览器不支持音频播放，请<a href="your-audio.m4a">下载文件</a>。
+        </audio>
+      </div> 
       <div class="main-img"><img src="../images/1.png"></div>
       <div class="text-content">
         <p>I got this tattoo half a month ago, on my ribcage — the word worthy.</p>
@@ -41,7 +55,10 @@
         <p>A tattoo is something that stays with you for life. Having it on my body is a constant reminder: never forget to be kind to myself. I deserve all good things.</p>
       </div>
 
-      <div class="play"><img src="../images/play.png"></div>
+      <div class="play" onclick="document.getElementById('myAudio3').play()"><img src="../images/play.png">
+        <audio controls id="myAudio3">
+          <source src="../audio/Hell & Heaven.m4a" type="audio/mp4">
+      </div> 
       <div class="main-img"><img src="../images/2.png"></div>
       <div class="text-content">
         <p>I majored in law, and the scales of justice represent my dream of becoming a lawyer. I got this tattoo before taking my second attempt at the graduate school entrance exam.</p>
